@@ -15,4 +15,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'cucumber', '~> 2.4'
   gem.add_development_dependency 'rspec', '~> 3.5'
   gem.add_development_dependency 'rspec-collection_matchers', '~> 1.1'
+  gem.add_development_dependency 'temporary_directory', '= 0.1.0'
 end
