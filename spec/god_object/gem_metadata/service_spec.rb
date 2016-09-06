@@ -21,14 +21,14 @@ module GodObject::GemMetadata
 
   describe Service do
     shared_context 'only one gem was provided at construction' do
-      let(:constructor_arguments) { [ gems: gems ] }
+      let(:constructor_arguments) { [gems: gems] }
       let(:gems) { [gem_specification] }
       let(:gem_specification) { instance_spy(::Gem::Specification, :specification, name: gem_name).as_null_object }
       let(:gem_name) { 'some_gem' }
     end
 
     shared_context 'two gems were provided at construction' do
-      let(:constructor_arguments) { [ gems: gems ] }
+      let(:constructor_arguments) { [gems: gems] }
       let(:gems) { [first_gem_specification, second_gem_specification] }
       let(:first_gem_specification) { instance_spy(::Gem::Specification, :first_specification, name: first_gem_name).as_null_object }
       let(:first_gem_name) { 'some_gem' }
@@ -59,7 +59,7 @@ module GodObject::GemMetadata
       context 'when called with gems' do
         include_context 'two gems were provided at construction'
 
-        let(:arguments) { [ gems: gems ] }
+        let(:arguments) { [gems: gems] }
 
         it { is_expected.to be_an described_class }
       end
