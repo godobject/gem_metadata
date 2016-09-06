@@ -17,9 +17,14 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 =end
 
-source 'https://rubygems.org'
+module GodObject
+  module GemMetadata
 
-# Gem dependencies are specified in the .gemspec file
-gemspec
+    # The currently loaded version.
+    #
+    # Using Semantic Versioning (2.0.0) rules
+    # @see http://semver.org/spec/v2.0.0.html
+    VERSION = '0.1.0-development'
 
-gem 'coveralls', require: false
+  end
+end

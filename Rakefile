@@ -17,9 +17,37 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 =end
 
-source 'https://rubygems.org'
+require 'bundler/gem_tasks'
+require 'rake'
+require 'pathname'
+require 'yard'
+require 'rspec/core/rake_task'
+require 'cucumber/rake/task'
 
-# Gem dependencies are specified in the .gemspec file
-gemspec
+RSpec::Core::RakeTask.new
+Cucumber::Rake::Task.new
 
-gem 'coveralls', require: false
+desc 'Run RSpec code examples and Cucumber features'
+task test: [:spec, :cucumber]
+
+YARD::Rake::YardocTask.new('doc')
+
+desc 'Removes temporary project files'
+task :clean do
+  %w(doc/api coverage pkg .yardoc .rbx Gemfile.lock).map{ |name| Pathname.new(name) }.each do |path|
+    path.rmtree if path.exist?
+  end
+
+  Pathname.glob('*.gem').each(&:delete)
+  Pathname.glob('**/*.rbc').each(&:delete)
+end
+
+desc 'Opens an interactive console with the project code loaded'
+task :console do
+  Bundler.setup
+  require 'pry'
+  require 'gem_metadata'
+  Pry.start(GodObject::GemMetadata)
+end
+
+task default: :test

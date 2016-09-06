@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-=begin
 Copyright Alexander E. Fischer <aef@godobject.net>, 2016
 
-This file is part of GemMetadata.
+GemMetadata is licensed under the following ISC-style license:
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
@@ -15,11 +13,3 @@ INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
 LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
-=end
-
-source 'https://rubygems.org'
-
-# Gem dependencies are specified in the .gemspec file
-gemspec
-
-gem 'coveralls', require: false
