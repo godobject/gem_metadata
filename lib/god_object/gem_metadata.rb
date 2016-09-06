@@ -22,4 +22,5 @@ module GodObject
   end
 end
 
+require_relative 'gem_metadata/version'
 require_relative 'gem_metadata/service'
