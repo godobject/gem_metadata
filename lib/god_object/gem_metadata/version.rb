@@ -24,7 +24,7 @@ module GodObject
     #
     # Using Semantic Versioning (2.0.0) rules
     # @see http://semver.org/spec/v2.0.0.html
-    VERSION = '0.1.0-development'
+    VERSION = '0.1.0'
 
   end
 end
